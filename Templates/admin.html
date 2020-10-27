@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+{% block body%}
+<body>
+
+<h2>Candidate Information</h2>
+
+<table>
+  <tr>
+    <th>Candidate name</th>
+    <th>Resume Match</th>
+    <th>Average marks</th>
+    <th>Average score</th>
+  </tr>
+  {%for m in marks%}
+  <tr>
+    <th>{{m.name}}</th>
+    <th>{{m.commentrate}}</th>
+    <th>{{m.resumematchper}}</th>
+    <th>{{m.botscore}}</th>
+    <th>{{m.avg}}</th>
+  </tr>
+ {% endfor %}
+</table>
+
+</body>
+{% endblock %}
+</html>
